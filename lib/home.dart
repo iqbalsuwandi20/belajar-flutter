@@ -17,11 +17,27 @@ class _HomeState extends State<Home> {
         leading: Icon(Icons.arrow_back_ios),
         actions: [Icon(Icons.notifications_active), Icon(Icons.history)],
       ),
-      body: Text(
-        "Ini adalah Home Appbar",
-        style:
-            TextStyle(fontFamily: "open sans", fontSize: 20, color: Colors.red),
-      ),
+      body: ElevatedButton(
+          onPressed: () => print("ini tertekan"),
+          child: Text("Ini adalah ElevatedButton")),
+      // TextButton
+      // body: TextButton(
+      //     onPressed: () {
+      //       print("Ini Text Button");
+      //     },
+      //     child: Text("Ini adalah text button"))
+      // Icon Button onPressed
+      // body: IconButton(
+      //   onPressed: () {
+      //     print("Ini tekan");
+      //   },
+      //   icon: Icon(Icons.alarm),
+      // ),
+      // body: Text(
+      //   "Ini adalah Home Appbar",
+      //   style:
+      //       TextStyle(fontFamily: "open sans", fontSize: 20, color: Colors.red),
+      // ),
     );
   }
 }
