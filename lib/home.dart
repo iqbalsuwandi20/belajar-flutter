@@ -13,9 +13,14 @@ class _HomeState extends State<Home> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.blue,
-        title: Text("Home Test"),
+        title: Text("Home Appbar"),
         leading: Icon(Icons.arrow_back_ios),
         actions: [Icon(Icons.notifications_active), Icon(Icons.history)],
+      ),
+      body: Text(
+        "Ini adalah Home Appbar",
+        style:
+            TextStyle(fontFamily: "open sans", fontSize: 20, color: Colors.red),
       ),
     );
   }
