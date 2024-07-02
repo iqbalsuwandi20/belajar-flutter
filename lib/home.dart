@@ -17,9 +17,18 @@ class _HomeState extends State<Home> {
         leading: Icon(Icons.arrow_back_ios),
         actions: [Icon(Icons.notifications_active), Icon(Icons.history)],
       ),
-      body: ElevatedButton(
-          onPressed: () => print("ini tertekan"),
-          child: Text("Ini adalah ElevatedButton")),
+      // Image network
+      body: Image.network(
+        "https://flutter.github.io/assets-for-api-docs/assets/widgets/owl.jpg",
+        height: 100,
+        width: 200,
+      ),
+      // Image asset
+      // body: Image.asset("assets/images/profile-avatar.jpg",
+      //     width: 200, height: 100),
+      //body: ElevatedButton(
+      //   onPressed: () => print("ini tertekan"),
+      // child: Text("Ini adalah ElevatedButton")),
       // TextButton
       // body: TextButton(
       //     onPressed: () {
