@@ -17,12 +17,114 @@ class _HomeState extends State<Home> {
         leading: Icon(Icons.arrow_back_ios),
         actions: [Icon(Icons.notifications_active), Icon(Icons.history)],
       ),
-      // Image network
-      body: Image.network(
-        "https://flutter.github.io/assets-for-api-docs/assets/widgets/owl.jpg",
-        height: 100,
-        width: 200,
+
+      // Container
+      body: Container(
+        child: Row(
+          children: [
+            Column(
+              children: [
+                ElevatedButton(
+                    onPressed: () {
+                      print("Ini tertekan");
+                    },
+                    child: Text("Ini adalah Elevated Button")),
+                Image.network(
+                  "https://flutter.github.io/assets-for-api-docs/assets/widgets/owl.jpg",
+                  height: 100,
+                  width: 200,
+                ),
+              ],
+            ),
+            Column(
+              children: [
+                Image.network(
+                  "https://flutter.github.io/assets-for-api-docs/assets/widgets/owl.jpg",
+                  height: 100,
+                  width: 200,
+                ),
+                ElevatedButton(
+                    onPressed: () {
+                      print("Ini tertekan");
+                    },
+                    child: Text("Ini adalah Elevated Button")),
+              ],
+            ),
+          ],
+        ),
       ),
+
+      // Row dan Column
+      // body: Row(
+      //   children: [
+      //     Column(
+      //       children: [
+      //         ElevatedButton(
+      //             onPressed: () {
+      //               print("Ini tertekan");
+      //             },
+      //             child: Text("Ini adalah Elevated Button")),
+      //         Image.network(
+      //           "https://flutter.github.io/assets-for-api-docs/assets/widgets/owl.jpg",
+      //           height: 100,
+      //           width: 200,
+      //         ),
+      //       ],
+      //     ),
+      //     Column(
+      //       children: [
+      //         Image.network(
+      //           "https://flutter.github.io/assets-for-api-docs/assets/widgets/owl.jpg",
+      //           height: 100,
+      //           width: 200,
+      //         ),
+      //         ElevatedButton(
+      //             onPressed: () {
+      //               print("Ini tertekan");
+      //             },
+      //             child: Text("Ini adalah Elevated Button")),
+      //       ],
+      //     ),
+      //   ],
+      // ),
+
+      // Row
+      // body: Row(
+      //   children: [
+      //     ElevatedButton(
+      //         onPressed: () {
+      //           print("Ini tertekan");
+      //         },
+      //         child: Text("Ini adalah Elevated Button")),
+      //     Image.network(
+      //       "https://flutter.github.io/assets-for-api-docs/assets/widgets/owl.jpg",
+      //       height: 100,
+      //       width: 200,
+      //     ),
+      //   ],
+      // ),
+
+      // Column
+      // body: Column(
+      //   children: [
+      //     ElevatedButton(
+      //         onPressed: () {
+      //           print("Ini tertekan");
+      //         },
+      //         child: Text("Ini adalah Elevated Button")),
+      //     Image.network(
+      //       "https://flutter.github.io/assets-for-api-docs/assets/widgets/owl.jpg",
+      //       height: 100,
+      //       width: 200,
+      //     ),
+      //   ],
+      // ),
+      // Image network
+      // body: Image.network(
+      //   "https://flutter.github.io/assets-for-api-docs/assets/widgets/owl.jpg",
+      //   height: 100,
+      //   width: 200,
+      // ),
       // Image asset
       // body: Image.asset("assets/images/profile-avatar.jpg",
       //     width: 200, height: 100),
