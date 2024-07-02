@@ -18,41 +18,59 @@ class _HomeState extends State<Home> {
         actions: [Icon(Icons.notifications_active), Icon(Icons.history)],
       ),
 
-      // Container
-      body: Container(
-        child: Row(
+      //Praktek
+      body: Center(
+        child: Column(
           children: [
-            Column(
-              children: [
-                ElevatedButton(
-                    onPressed: () {
-                      print("Ini tertekan");
-                    },
-                    child: Text("Ini adalah Elevated Button")),
-                Image.network(
-                  "https://flutter.github.io/assets-for-api-docs/assets/widgets/owl.jpg",
-                  height: 100,
-                  width: 200,
-                ),
-              ],
+            Image.asset(
+              "assets/images/profile-avatar.jpg",
+              width: 200,
+              height: 100,
             ),
-            Column(
-              children: [
-                Image.network(
-                  "https://flutter.github.io/assets-for-api-docs/assets/widgets/owl.jpg",
-                  height: 100,
-                  width: 200,
-                ),
-                ElevatedButton(
-                    onPressed: () {
-                      print("Ini tertekan");
-                    },
-                    child: Text("Ini adalah Elevated Button")),
-              ],
-            ),
+            const Center(
+              child: Column(
+                children: [Text("Nama: "), Text("Iqbal Suwandi")],
+              ),
+            )
           ],
         ),
       ),
+
+      // Container
+      // body: Container(
+      //   child: Row(
+      //     children: [
+      //       Column(
+      //         children: [
+      //           ElevatedButton(
+      //               onPressed: () {
+      //                 print("Ini tertekan");
+      //               },
+      //               child: Text("Ini adalah Elevated Button")),
+      //           Image.network(
+      //             "https://flutter.github.io/assets-for-api-docs/assets/widgets/owl.jpg",
+      //             height: 100,
+      //             width: 200,
+      //           ),
+      //         ],
+      //       ),
+      //       Column(
+      //         children: [
+      //           Image.network(
+      //             "https://flutter.github.io/assets-for-api-docs/assets/widgets/owl.jpg",
+      //             height: 100,
+      //             width: 200,
+      //           ),
+      //           ElevatedButton(
+      //               onPressed: () {
+      //                 print("Ini tertekan");
+      //               },
+      //               child: Text("Ini adalah Elevated Button")),
+      //         ],
+      //       ),
+      //     ],
+      //   ),
+      // ),
 
       // Row dan Column
       // body: Row(
@@ -119,24 +137,29 @@ class _HomeState extends State<Home> {
       //     ),
       //   ],
       // ),
+
       // Image network
       // body: Image.network(
       //   "https://flutter.github.io/assets-for-api-docs/assets/widgets/owl.jpg",
       //   height: 100,
       //   width: 200,
       // ),
+
       // Image asset
       // body: Image.asset("assets/images/profile-avatar.jpg",
       //     width: 200, height: 100),
+
       //body: ElevatedButton(
       //   onPressed: () => print("ini tertekan"),
       // child: Text("Ini adalah ElevatedButton")),
+
       // TextButton
       // body: TextButton(
       //     onPressed: () {
       //       print("Ini Text Button");
       //     },
       //     child: Text("Ini adalah text button"))
+
       // Icon Button onPressed
       // body: IconButton(
       //   onPressed: () {
@@ -144,6 +167,7 @@ class _HomeState extends State<Home> {
       //   },
       //   icon: Icon(Icons.alarm),
       // ),
+
       // body: Text(
       //   "Ini adalah Home Appbar",
       //   style:
