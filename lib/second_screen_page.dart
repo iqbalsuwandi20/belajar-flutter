@@ -1,3 +1,4 @@
+import 'package:belajar_flutter_intermediate/experience_screen_page.dart';
 import 'package:flutter/material.dart';
 
 class SecondScreenPage extends StatefulWidget {
@@ -12,16 +13,31 @@ class _SecondScreenPageState extends State<SecondScreenPage> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text("Second Screen Page"),
+          title: const Text("Second Screen Page"),
         ),
         body: Center(
           child: Column(
             children: [
+              Text("Nama saya Iqbal"),
               ElevatedButton(
                   onPressed: () {
-                    Navigator.pop(context);
+                    Navigator.push(context, MaterialPageRoute(builder: (_) {
+                      return ExperienceScreenPage();
+                    }));
                   },
-                  child: Text("This is Second Screen Page"))
+                  child: Text("Lihat pengalaman")),
+              ElevatedButton(
+                  onPressed: () {
+                    Navigator.of(context, rootNavigator: true)
+                        .pushNamed("educationPage");
+                  },
+                  child: const Text("Lihat Pendidikan")),
+              ElevatedButton(
+                  onPressed: () {
+                    Navigator.of(context, rootNavigator: true)
+                        .pushNamedAndRemoveUntil(("/"), (route) => false);
+                  },
+                  child: Text("Kembali kehalaman pertama")),
             ],
           ),
         ));

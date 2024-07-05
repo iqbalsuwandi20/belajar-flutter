@@ -1,3 +1,4 @@
+import 'package:belajar_flutter_intermediate/education_screen_page.dart';
 import 'package:belajar_flutter_intermediate/second_screen_page.dart';
 import 'package:flutter/material.dart';
 
@@ -18,7 +19,10 @@ class MyApp extends StatelessWidget {
       ),
       home: const MyHomePage(),
       initialRoute: "/",
-      routes: {"secondPage": (context) => SecondScreenPage()},
+      routes: {
+        "secondPage": (context) => SecondScreenPage(),
+        "educationPage": (context) => EducationScreenPage()
+      },
     );
   }
 }
@@ -35,20 +39,25 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Navigation and Routing"),
+        title: Text("Navigation and Routing Advance"),
       ),
       body: Center(
         child: Column(
           children: [
-            Text("This is first page"),
-
-            // navigator pushnamed
+            Text("Pengenalan Diri"),
             ElevatedButton(
                 onPressed: () {
                   Navigator.of(context, rootNavigator: true)
-                      .pushNamed("secondPage");
+                      .pushNamedAndRemoveUntil("secondPage", (route) => false);
                 },
-                child: const Text("This is Second Screen Page"))
+                child: Text("Go to second page"))
+            // navigator pushnamed
+            // ElevatedButton(
+            //     onPressed: () {
+            //       Navigator.of(context, rootNavigator: true)
+            //           .pushNamed("secondPage");
+            //     },
+            //     child: const Text("This is Second Screen Page"))
 
             // navigator pop
             // ElevatedButton(
