@@ -48,7 +48,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   Navigator.of(context, rootNavigator: true)
                       .pushNamed("secondPage");
                 },
-                child: Text("This is Second Screen Page"))
+                child: const Text("This is Second Screen Page"))
 
             // navigator pop
             // ElevatedButton(
