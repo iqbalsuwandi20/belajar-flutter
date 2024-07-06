@@ -1,4 +1,6 @@
+import 'package:belajar_flutter_getx/second_page.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 void main() {
   runApp(const MyApp());
@@ -9,7 +11,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
@@ -30,6 +32,18 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text("State Management GetX"),
+      ),
+      body: Center(
+        child: ElevatedButton(
+            onPressed: () {
+              // ignore: prefer_const_constructors
+              Get.to(SecondPage());
+            },
+            child: const Text("Go to Seccond Page")),
+      ),
+    );
   }
 }
