@@ -1,4 +1,5 @@
 import 'package:belajar_flutter_getx/dark_mode_page.dart';
+import 'package:belajar_flutter_getx/school_page.dart';
 import 'package:belajar_flutter_getx/second_page.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -53,7 +54,13 @@ class _MyHomePageState extends State<MyHomePage> {
                 // ignore: prefer_const_constructors
                 Get.to(() => DarkModePage());
               },
-              child: const Text("Go to Dark Mode Page"))
+              child: const Text("Go to Dark Mode Page")),
+          ElevatedButton(
+              onPressed: () {
+                // ignore: prefer_const_constructors
+                Get.to(() => SchoolPage());
+              },
+              child: const Text("Go to School Page"))
         ],
       )),
     );
