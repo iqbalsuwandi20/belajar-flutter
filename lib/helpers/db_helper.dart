@@ -42,4 +42,10 @@ class DbHelper {
 
     return _database!;
   }
+
+  Future<List<Map<String, dynamic>>> select() async {
+    Database db = await this.database;
+    var mapList = await db.query("absensi", orderBy: "nama");
+    return mapList;
+  }
 }
