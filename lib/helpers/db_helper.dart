@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:belajar_flutter_sqlite/models/absensi.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:sqflite/sqflite.dart';
 
@@ -47,5 +48,34 @@ class DbHelper {
     Database db = await this.database;
     var mapList = await db.query("absensi", orderBy: "nama");
     return mapList;
+  }
+
+  Future<int> _create(Absensi object) async {
+    Database db = await this.database;
+    int count = await db.insert("absensi", object.toMap());
+    return count;
+  }
+
+  Future<int> _update(Absensi object) async {
+    Database db = await this.database;
+    int count = await db.update("absensi", object.toMap(),
+        where: "id=?", whereArgs: [object.id]);
+    return count;
+  }
+
+  Future<int> _delete(int id) async {
+    Database db = await this.database;
+    int count = await db.delete("absensi", where: "id=?", whereArgs: [id]);
+    return count;
+  }
+
+  Future<List<Absensi>> _getAbsensiList() async {
+    var absensiMapList = await select();
+    int count = absensiMapList.length;
+    List<Absensi> absensiList = <Absensi>[];
+    for (var i = 0; i < count; i++) {
+      absensiList.add(Absensi.fromMap(absensiMapList[i]));
+    }
+    return absensiList;
   }
 }
