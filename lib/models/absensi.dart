@@ -4,7 +4,7 @@ class Absensi {
   // ignore: non_constant_identifier_names
   String? _status_hadir;
 
-  Absensi(this._id, this._nama, this._status_hadir);
+  Absensi(this._nama, this._status_hadir);
 
   Absensi.fromMap(Map<String, dynamic> map) {
     this._id = map["id"];
@@ -26,7 +26,7 @@ class Absensi {
 
   Map<String, dynamic> toMap() {
     Map<String, dynamic> map = Map<String, dynamic>();
-    map['id'] = this._id;
+    map['id'] = _id;
     map['nama'] = nama;
     map['status_hadir'] = status_hadir;
 

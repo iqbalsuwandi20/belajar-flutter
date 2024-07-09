@@ -50,26 +50,26 @@ class DbHelper {
     return mapList;
   }
 
-  Future<int> _create(Absensi object) async {
+  Future<int> create(Absensi object) async {
     Database db = await this.database;
     int count = await db.insert("absensi", object.toMap());
     return count;
   }
 
-  Future<int> _update(Absensi object) async {
+  Future<int> update(Absensi object) async {
     Database db = await this.database;
     int count = await db.update("absensi", object.toMap(),
         where: "id=?", whereArgs: [object.id]);
     return count;
   }
 
-  Future<int> _delete(int id) async {
+  Future<int> delete(int id) async {
     Database db = await this.database;
     int count = await db.delete("absensi", where: "id=?", whereArgs: [id]);
     return count;
   }
 
-  Future<List<Absensi>> _getAbsensiList() async {
+  Future<List<Absensi>> getAbsensiList() async {
     var absensiMapList = await select();
     int count = absensiMapList.length;
     List<Absensi> absensiList = <Absensi>[];
