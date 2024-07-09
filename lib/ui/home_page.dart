@@ -26,7 +26,7 @@ class _HomePageState extends State<HomePage> {
       floatingActionButton: FloatingActionButton(
         onPressed: () async {
           var absensi = await _navigateToFormAbensi(context, null);
-          if (absensi != null) _createAbsensi(absensi);
+          _createAbsensi(absensi);
         },
         child: const Icon(Icons.add),
       ),
@@ -65,7 +65,7 @@ class _HomePageState extends State<HomePage> {
               onTap: () async {
                 var absensi = await _navigateToFormAbensi(
                     context, this.absensiList![index]);
-                if (absensi != null) _editAbsensi(absensi);
+                _editAbsensi(absensi);
               },
             ),
           );
