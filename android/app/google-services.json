@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "551190969707",
+    "project_id": "belajar-flutter-authentication",
+    "storage_bucket": "belajar-flutter-authentication.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:551190969707:android:1205d54d28345ea2ca202e",
+        "android_client_info": {
+          "package_name": "com.example.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDt4kGt6xURcZGtXOyzcSWTAQ_K4MS2D2c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
