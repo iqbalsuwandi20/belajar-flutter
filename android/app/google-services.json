@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "729308492590",
+    "project_id": "belajar-flutter-notification",
+    "storage_bucket": "belajar-flutter-notification.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:729308492590:android:2c30fb267793d2effe80bf",
+        "android_client_info": {
+          "package_name": "com.example.notification"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAcu3AVwPRG0lro92eqLdemjtM5CdHjmwc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
