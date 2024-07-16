@@ -38,6 +38,8 @@ dependencies:
   cloud_firestore: ^5.1.0
   firebase_auth: ^5.1.2
   provider: ^6.1.2
+  firebase_messaging: ^15.0.3
+  overlay_support: ^2.1.0
 
 dev_dependencies:
   flutter_test:
