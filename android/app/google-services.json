@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "480056607339",
+    "project_id": "belajar-flutter-maps",
+    "storage_bucket": "belajar-flutter-maps.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:480056607339:android:1a420f9323fed439f6e72e",
+        "android_client_info": {
+          "package_name": "com.example.flutter_maps"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB6rXdDtqulVoF5itBv9YFxoTw89m667xQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
