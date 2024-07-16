@@ -21,13 +21,15 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
+    return OverlaySupport(
+      child: MaterialApp(
+        title: 'Flutter Demo',
+        theme: ThemeData(
+          colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+          useMaterial3: true,
+        ),
+        home: const MyHomePage(),
       ),
-      home: const MyHomePage(),
     );
   }
 }
@@ -41,7 +43,7 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   late final FirebaseMessaging _messaging;
-  late final int _totalNotif;
+  int _totalNotif = 0;
   PushNotif? _notifInfo;
 
   void registrasiNotif() async {
@@ -63,8 +65,11 @@ class _MyHomePageState extends State<MyHomePage> {
         print(message);
 
         PushNotif pushNotif = PushNotif(
-            title: message.notification?.title,
-            body: message.notification?.body);
+          title: message.notification?.title,
+          body: message.notification?.body,
+          dataTitle: message.data["title"],
+          dataBody: message.data["body"],
+        );
 
         setState(() {
           _notifInfo = pushNotif;
@@ -88,6 +93,7 @@ class _MyHomePageState extends State<MyHomePage> {
     RemoteMessage? _initialMessage;
     await FirebaseMessaging.instance.getInitialMessage();
 
+    // ignore: unnecessary_null_comparison
     if (_initialMessage != null) {
       PushNotif notifFication = PushNotif(
         title: _initialMessage.notification?.title,
@@ -103,6 +109,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   void initState() {
+    _totalNotif = 0;
     super.initState();
     FirebaseMessaging.onMessageOpenedApp.listen((RemoteMessage msg) {
       PushNotif notification = PushNotif(
@@ -118,6 +125,42 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text("Notification"),
+      ),
+      body: Column(
+        children: [
+          const Text("TOTAL DATA YANG DITERIMA"),
+          NotifBadge(totalNotif: _totalNotif),
+          _notifInfo != null
+              ? Column(
+                  children: [
+                    Text("${_notifInfo!.dataTitle ?? _notifInfo!.title}"),
+                    Text("${_notifInfo!.dataBody ?? _notifInfo!.body}")
+                  ],
+                )
+              : Container()
+        ],
+      ),
+    );
+  }
+}
+
+class NotifBadge extends StatelessWidget {
+  final int totalNotif;
+  const NotifBadge({super.key, required this.totalNotif});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      decoration:
+          const BoxDecoration(color: Colors.blue, shape: BoxShape.circle),
+      child: Center(
+          child: Padding(
+        padding: const EdgeInsets.all(10),
+        child: Text("$totalNotif"),
+      )),
+    );
   }
 }
