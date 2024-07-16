@@ -83,6 +83,39 @@ class _MyHomePageState extends State<MyHomePage> {
     }
   }
 
+  checkMessage() async {
+    await Firebase.initializeApp();
+    RemoteMessage? _initialMessage;
+    await FirebaseMessaging.instance.getInitialMessage();
+
+    if (_initialMessage != null) {
+      PushNotif notifFication = PushNotif(
+        title: _initialMessage.notification?.title,
+        body: _initialMessage.notification?.body,
+      );
+
+      setState(() {
+        _notifInfo = notifFication;
+        _totalNotif++;
+      });
+    }
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    FirebaseMessaging.onMessageOpenedApp.listen((RemoteMessage msg) {
+      PushNotif notification = PushNotif(
+          title: msg.notification?.title, body: msg.notification?.body);
+      setState(() {
+        _notifInfo = notification;
+        _totalNotif++;
+      });
+      registrasiNotif();
+      checkMessage();
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold();
