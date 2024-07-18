@@ -4,6 +4,7 @@ import 'package:belajar_flutter_maps/screens/wrapper.dart';
 import 'package:belajar_flutter_maps/services/auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:overlay_support/overlay_support.dart';
 import 'package:provider/provider.dart';
 
 void main() async {
@@ -23,13 +24,15 @@ class MyApp extends StatelessWidget {
     return StreamProvider<FirebaseUser?>.value(
       value: Auth().user,
       initialData: null,
-      child: MaterialApp(
-        title: 'Flutter Demo',
-        theme: ThemeData(
-          colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-          useMaterial3: true,
+      child: OverlaySupport(
+        child: MaterialApp(
+          title: 'Flutter Demo',
+          theme: ThemeData(
+            colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+            useMaterial3: true,
+          ),
+          home: const Wrapper(),
         ),
-        home: const Wrapper(),
       ),
     );
   }
